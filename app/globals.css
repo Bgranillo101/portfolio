@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
+/* ===== DESIGN TOKENS ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark theme (default) */
+  --bg: #07070f;
+  --bg-1: #0d0d1c;
+  --bg-2: #131328;
+  --bg-3: #1a1a36;
+  --border: #1c1c38;
+  --border-2: #272748;
+  --text: #eaeaf5;
+  --text-2: #8090b8;
+  --text-3: #4a5078;
+  --card-bg: #0d0d1c;
+  --card-border: #1c1c38;
+
+  /* Gradient accents */
+  --accent-1: #7c3aed;
+  --accent-2: #3b82f6;
+  --accent-3: #06b6d4;
+  --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  --gradient-subtle: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15));
+  --glow: 0 0 60px rgba(124, 58, 237, 0.15), 0 0 120px rgba(59, 130, 246, 0.08);
+}
+
+[data-theme="light"] {
+  --bg: #f8f9ff;
+  --bg-1: #ffffff;
+  --bg-2: #eef0ff;
+  --bg-3: #e4e7ff;
+  --border: #d8dcf8;
+  --border-2: #c4caee;
+  --text: #08081a;
+  --text-2: #44487a;
+  --text-3: #9098c0;
+  --card-bg: #ffffff;
+  --card-border: #d8dcf8;
+
+  --accent-1: #7c3aed;
+  --accent-2: #2563eb;
+  --accent-3: #0891b2;
+  --glow: 0 0 60px rgba(124, 58, 237, 0.08), 0 0 120px rgba(59, 130, 246, 0.04);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-bg-3: var(--bg-3);
+  --color-border: var(--border);
+  --color-border-2: var(--border-2);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+
+  --font-sans: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== GRADIENT UTILITIES ===== */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* ===== DOT GRID BACKGROUND ===== */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ===== CAROUSEL FADE EDGES ===== */
+.carousel-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-carousel {
+  animation: carousel-scroll 30s linear infinite;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
