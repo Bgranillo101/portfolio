@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brandon Granillo — Portfolio
+
+Personal portfolio website built with Next.js 15, showcasing my work in embedded systems, digital design, and systems engineering.
+
+**Live site:** [bgranillo101.github.io/portfolio](https://bgranillo101.github.io/portfolio/)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router, TypeScript) |
+| Styling | Tailwind CSS v4 |
+| Animation | Framer Motion |
+| 3D | React Three Fiber + Drei |
+| Icons | Lucide React |
+| Theme | next-themes (dark/light toggle) |
+| Fonts | Space Grotesk, Inter, JetBrains Mono |
+
+## Features
+
+- Animated 3D hero element (torus knot with distort material)
+- Dark/light theme with persistent toggle
+- Bento grid project layout
+- Auto-scrolling carousels for languages, skills, and class schedule
+- Floating gradient orbs and mesh background graphics
+- Scroll-triggered reveal animations
+- Glassmorphism navigation with mobile drawer
+- Fully responsive design
+
+## Project Structure
+
+```
+app/
+  layout.tsx        Root layout, fonts, theme provider
+  page.tsx          Home page composing all sections
+  globals.css       Design tokens, utilities, animations
+components/
+  Nav.tsx           Sticky nav with theme toggle
+  Hero.tsx          Hero section with 3D scene
+  HeroScene.tsx     React Three Fiber canvas
+  About.tsx         Bio and stats
+  Education.tsx     ASU degree and coursework
+  Experience.tsx    Timeline with work history
+  Projects.tsx      Bento grid project cards
+  Skills.tsx        Three auto-scrolling carousels
+  Carousel.tsx      Reusable infinite scroll component
+  Lifestyle.tsx     Activities and photo grid
+  Contact.tsx       CTA with social links
+  Footer.tsx        Copyright and links
+  SectionReveal.tsx Framer Motion scroll animations
+  ThemeProvider.tsx  Dark/light mode context
+  BackgroundGraphics.tsx  Floating orbs and mesh gradients
+lib/
+  data.ts           All portfolio content as typed objects
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy to Vercel:
 
-## Learn More
+```bash
+npx vercel
+```
 
-To learn more about Next.js, take a look at the following resources:
+Or push to GitHub and connect the repo to [vercel.com](https://vercel.com).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
