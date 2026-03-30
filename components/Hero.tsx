@@ -19,9 +19,13 @@ export function Hero() {
     >
       {/* Background fade */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg" />
+      {/* Light mode overlay to improve text contrast */}
+      <div className="absolute inset-0 bg-bg/60 dark:bg-transparent transition-colors duration-300" />
 
       {/* 3D Scene */}
-      <HeroScene />
+      <div className="dark:opacity-60 opacity-30 absolute inset-0">
+        <HeroScene />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-[1160px] px-6 md:px-12 w-full pt-[72px]">

@@ -32,7 +32,7 @@ function AnimatedShape() {
 
 export function HeroScene() {
   return (
-    <div className="absolute inset-0 opacity-60">
+    <div className="absolute inset-0">
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <ambientLight intensity={0.3} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} color="#3b82f6" />

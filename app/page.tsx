@@ -8,14 +8,15 @@ import { Skills } from "@/components/Skills";
 import { Lifestyle } from "@/components/Lifestyle";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { BackgroundGraphics } from "@/components/BackgroundGraphics";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <main className="relative">
-        <div className="fixed inset-0 dot-grid opacity-30 pointer-events-none z-0" />
-        <div className="relative z-10">
+      <BackgroundGraphics />
+      <div className="relative z-10">
+        <Nav />
+        <main>
           <Hero />
           <About />
           <Education />
@@ -24,9 +25,9 @@ export default function Home() {
           <Skills />
           <Lifestyle />
           <Contact />
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

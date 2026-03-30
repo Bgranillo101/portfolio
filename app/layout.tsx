@@ -38,7 +38,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased relative">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
