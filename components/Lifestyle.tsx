@@ -1,6 +1,6 @@
 "use client";
 
-import { Waves, Circle, Mountain, Dumbbell, Camera } from "lucide-react";
+import { Waves, Circle, Mountain, Dumbbell } from "lucide-react";
 import { activities } from "@/lib/data";
 import { SectionReveal, StaggerContainer, StaggerItem } from "./SectionReveal";
 
@@ -13,11 +13,10 @@ const iconMap = {
 
 export function Lifestyle() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-          {/* Content */}
-          <SectionReveal>
+        <SectionReveal>
+          <div className="max-w-2xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-7 h-px bg-accent-1" />
               <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-accent-1">
@@ -53,23 +52,8 @@ export function Lifestyle() {
                 );
               })}
             </StaggerContainer>
-          </SectionReveal>
-
-          {/* Photos grid */}
-          <SectionReveal delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
-              {activities.map((activity) => (
-                <div
-                  key={activity.name}
-                  className="aspect-square rounded-2xl bg-card-bg border border-card-border flex flex-col items-center justify-center gap-2 text-text-3"
-                >
-                  <Camera size={24} strokeWidth={1.5} />
-                  <span className="font-mono text-xs">{activity.name}</span>
-                </div>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ import { Code, Cpu, BookOpen } from "lucide-react";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-20">
+    <section id="skills" className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
@@ -20,7 +20,7 @@ export function Skills() {
               Skills
             </span>
           </div>
-          <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-tight mb-16">
+          <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-tight mb-8">
             My <span className="gradient-text">toolkit.</span>
           </h2>
         </SectionReveal>

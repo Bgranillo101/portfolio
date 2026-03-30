@@ -5,6 +5,14 @@ import { ArrowUpRight } from "lucide-react";
 import { projects, siteConfig } from "@/lib/data";
 import { SectionReveal } from "./SectionReveal";
 
+const cardGradients = [
+  "from-accent-1 via-accent-2 to-accent-3",
+  "from-accent-2 via-accent-3 to-accent-1",
+  "from-accent-3 via-accent-1 to-accent-2",
+  "from-accent-1 to-accent-2",
+  "from-accent-2 to-accent-3",
+];
+
 function GithubIcon({ size = 18, className = "" }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -15,10 +23,10 @@ function GithubIcon({ size = 18, className = "" }: { size?: number; className?: 
 
 export function Projects() {
   return (
-    <section id="projects" className="py-16 md:py-20">
+    <section id="projects" className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
         <SectionReveal>
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-7 h-px bg-accent-1" />
@@ -58,7 +66,10 @@ export function Projects() {
               {/* Hover glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-accent-1/15 via-accent-2/15 to-accent-3/15 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="gradient-border relative bg-card-bg border border-card-border rounded-2xl p-6 md:p-8 h-full flex flex-col transition-all duration-300 group-hover:border-transparent group-hover:shadow-lg">
+              <div className="gradient-border relative bg-card-bg border border-card-border rounded-2xl overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:border-transparent group-hover:shadow-lg">
+                {/* Gradient banner */}
+                <div className={`h-1.5 w-full bg-gradient-to-r ${cardGradients[i % cardGradients.length]} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                <div className="p-6 md:p-8 flex flex-col flex-1">
                 {/* Top row */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex flex-wrap gap-2">
@@ -108,6 +119,7 @@ export function Projects() {
                       {tech}
                     </span>
                   ))}
+                </div>
                 </div>
               </div>
             </motion.div>

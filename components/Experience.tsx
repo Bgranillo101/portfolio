@@ -5,7 +5,7 @@ import { SectionReveal, StaggerContainer, StaggerItem } from "./SectionReveal";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-16 md:py-20">
+    <section id="experience" className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
@@ -14,7 +14,7 @@ export function Experience() {
               Experience
             </span>
           </div>
-          <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-tight mb-12">
+          <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-tight mb-8">
             Where I&apos;ve <span className="gradient-text">worked.</span>
           </h2>
         </SectionReveal>

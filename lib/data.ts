@@ -4,7 +4,7 @@ export const siteConfig = {
   email: "bjgranil@asu.edu",
   github: "https://github.com/Bgranillo101",
   linkedin: "https://www.linkedin.com/in/bgranillo/",
-  resume: "/resume.pdf",
+  resume: "/portfolio/resume.pdf",
 };
 
 export const heroData = {
@@ -24,14 +24,13 @@ export const heroData = {
 
 export const aboutData = {
   bio: [
-    "Computer Systems Engineering student at Arizona State University with hands-on experience applying the full Systems Engineering lifecycle to real-world, hardware-focused projects. I am driven by designing resilient, high-reliability systems that operate under technical, financial, and stakeholder constraints.",
-    "Currently, I serve as the Lead Systems Engineer and Finance Chair for the Kenya Solar project (EPICS at ASU), where I lead the end-to-end development of a renewable energy system for the Naki community and GUU Secondary School in Kenya. My work spans requirements analysis, system architecture, trade studies, and the integration and verification of power generation and storage subsystems, alongside managing project budgets and cost-driven design decisions.",
-    "I thrive at the intersection of technical execution and systems leadership — bridging cross-functional engineering teams and external stakeholders to deliver practical, sustainable infrastructure. I am actively seeking internship or entry-level opportunities in systems engineering or embedded systems where I can contribute to real products and grow into a high-impact engineering role.",
+    "Computer Systems Engineering student at ASU driven by designing resilient, high-reliability systems — from digital logic and embedded firmware to full-lifecycle systems architecture.",
+    "Currently leading the end-to-end systems engineering and financial management for a multi-phase solar energy deployment in Kenya (EPICS at ASU), and actively seeking internship opportunities in embedded systems or systems engineering.",
   ],
   stats: [
     { value: "3.96", label: "GPA" },
     { value: "7+", label: "Projects" },
-    { value: "3", label: "Work Experiences" },
+    { value: "2", label: "Work Experiences" },
   ],
 };
 
@@ -101,19 +100,6 @@ export const experiences: Experience[] = [
     ],
     tags: ["Revit 2024", "Structural Design", "CAD", "Building Codes"],
   },
-  {
-    role: "Retail Salesperson",
-    company: "DICK'S Sporting Goods",
-    location: "Jackson, TN",
-    date: "Jun 2022 — May 2024",
-    type: "On-site",
-    bullets: [
-      "Delivered customer-focused service by recommending footwear for various needs",
-      "Maintained organized displays aligned with promotional strategies",
-      "Handled inventory restocking, shipment processing, and loss prevention",
-    ],
-    tags: ["Customer Service", "Inventory Management", "Retail Operations"],
-  },
 ];
 
 export interface Project {
@@ -166,18 +152,11 @@ export const projects: Project[] = [
     stack: ["MATLAB", "Sensor Fusion", "Navigation Logic", "Embedded Systems"],
   },
   {
-    title: "3D Printing Design & Fabrication",
+    title: "Digital Fabrication Projects",
     description:
-      "Designed a functional CAD component for additive manufacturing. Produced and validated a final 3D-printed part for dimensional accuracy and fit. Iterated designs based on fabrication constraints and print results.",
-    tags: ["CAD", "Rapid Prototyping"],
-    stack: ["CAD Modeling", "3D Printing", "Design Iteration"],
-  },
-  {
-    title: "Laser Cutter Manufacturing Project",
-    description:
-      "Created vector-based design files for laser cutting. Fabricated physical components accounting for material properties and kerf. Applied lab safety procedures and validated final output against design specs.",
-    tags: ["Digital Fabrication", "Manufacturing"],
-    stack: ["Vector Design", "Laser Cutting", "Material Properties"],
+      "Designed functional CAD components for additive manufacturing and vector-based files for laser cutting. Produced and validated 3D-printed parts for dimensional accuracy and fabricated laser-cut components accounting for material properties and kerf. Iterated designs based on fabrication constraints and validated final outputs against design specs.",
+    tags: ["CAD", "Manufacturing", "Rapid Prototyping"],
+    stack: ["CAD Modeling", "3D Printing", "Laser Cutting", "Vector Design"],
     github: "https://github.com/Bgranillo101/manufacturing-projects",
   },
 ];

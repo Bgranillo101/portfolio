@@ -1,27 +1,14 @@
 "use client";
 
-import { User } from "lucide-react";
 import { aboutData } from "@/lib/data";
 import { SectionReveal, StaggerContainer, StaggerItem } from "./SectionReveal";
 
 export function About() {
   return (
-    <section id="about" className="py-16 md:py-20">
+    <section id="about" className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
-        <div className="grid md:grid-cols-[300px_1fr] lg:grid-cols-[360px_1fr] gap-12 lg:gap-20 items-start">
-          {/* Photo */}
-          <SectionReveal>
-            <div className="relative group">
-              <div className="absolute -inset-3 bg-gradient-to-br from-accent-1/20 via-accent-2/10 to-accent-3/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative aspect-[3/4] rounded-2xl bg-card-bg border border-card-border flex flex-col items-center justify-center gap-3 text-text-3 overflow-hidden">
-                <User size={44} strokeWidth={1.2} />
-                <span className="font-mono text-xs">Add Your Photo</span>
-              </div>
-            </div>
-          </SectionReveal>
-
-          {/* Content */}
-          <SectionReveal delay={0.15}>
+        <SectionReveal>
+          <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-7 h-px bg-accent-1" />
               <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-accent-1">
@@ -59,8 +46,8 @@ export function About() {
                 </StaggerItem>
               ))}
             </StaggerContainer>
-          </SectionReveal>
-        </div>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );

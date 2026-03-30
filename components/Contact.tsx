@@ -6,7 +6,7 @@ import { SectionReveal } from "./SectionReveal";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-20">
+    <section id="contact" className="py-12 md:py-16">
       <div className="mx-auto max-w-[1160px] px-6 md:px-12">
         <SectionReveal>
           <div className="text-center max-w-2xl mx-auto">
